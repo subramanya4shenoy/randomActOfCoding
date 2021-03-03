@@ -1,0 +1,33 @@
+HackerEarth CodeMonk problem on Arrays (level: EASY) 
+
+https://www.hackerearth.com/practice/codemonk/
+
+solution: 
+process.stdin.resume();
+process.stdin.setEncoding("utf-8");
+var stdin_input = "";
+
+process.stdin.on("data", function (input) {
+    stdin_input += input;                               
+});
+
+process.stdin.on("end", function () {
+   main(stdin_input);
+});
+
+function main(input) {
+    let inputArray = input.split('\n');
+    inputArray.shift();
+    let length = inputArray.length; let i = 0;
+    while(i < length) {
+            let arrayInfo = inputArray[i].split(' ');
+            let arrayLength = arrayInfo[0];
+            let arrayRotation = arrayInfo[1];
+            arrayRotation = arrayRotation % arrayLength;
+            let tempArray = inputArray[i+1].split(' ')
+            let splicedArray = tempArray.splice((-1)*(arrayRotation));
+            process.stdout.write(splicedArray.concat(tempArray).join(' ')); 
+            i += 2;
+            process.stdout.write()); 
+     }
+}
